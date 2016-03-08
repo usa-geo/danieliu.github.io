@@ -1,0 +1,84 @@
+li {
+	list-style-type: none;
+}
+
+main {
+	height: 100vh;
+}
+
+section {
+	text-align: center;
+	position: relative;
+	top: 40%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+// Links
+a {
+	color: $grey-color-lighter;
+	text-decoration: none;
+	transition: color 0.15s;
+
+	&:visited {
+		color: $grey-color-lighter;
+	}
+
+	&:hover {
+		color: $brand-color;
+	}
+}
+
+.name {
+	font-size: 3.4rem;
+	font-weight: 600;
+	margin-bottom: 10px;
+
+	span {
+		color: $grey-color-lighter;
+		font-weight: 100;
+	}
+}
+
+
+// Social media accounts
+.connect {
+	margin: 0 0 30px;
+
+	li {
+		display: inline-block;
+		margin: 0 10px;
+	}
+
+	// a {
+	// 	color: $grey-color-lighter;
+
+	// 	i {
+	// 		transition: color 0.15s;
+	// 	}
+
+	// 	&:hover {
+	// 		color: $brand-color;
+	// 	}
+	// }
+}
+
+
+// Fix AdblockPlus filter by using renamed class
+.linkedin {
+	&:before {
+		content: "\f0e1";
+	}
+}
+
+.fbook {
+	&:before {
+		content: "\f09a";
+	}
+}
+
+// Pages
+.pages {
+	margin: 0;
+}
