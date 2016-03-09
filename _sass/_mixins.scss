@@ -1,0 +1,40 @@
+// Use media queries like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($width) {
+    @media screen and (min-width: $width) {
+        @content;
+    }
+}
+
+
+// transform
+@mixin transform($transforms) {
+	-moz-transform: $transforms;
+	-o-transform: $transforms;
+	-ms-transform: $transforms;
+	-webkit-transform: $transforms;
+	transform: $transforms;
+}
+
+@mixin transform-origin($origins) {
+	-ms-transform-origin: $origins;
+	-webkit-transform-origin: $origins;
+	transform-origin: $origins;
+}
+
+// transition
+@mixin transition($transition...) {
+	-moz-transition: $transition;
+	-o-transition: $transition;
+	-webkit-transition: $transition;
+	transition: $transition;
+}
+
+@mixin scale($scale) {
+	@include transform(scale($scale));
+}
