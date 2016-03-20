@@ -37,8 +37,8 @@
 				@include transition(transform 0.25s ease-in-out);
 			}
 
-			&:hover {
-				color: darken($brand-color, 25%);
+			&:hover, &:focus {
+				color: $brand-color;
 			}
 
 			&:hover:before, &:focus:before {
