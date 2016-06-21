@@ -26,5 +26,9 @@ linkedin_username: idanielliu
 # facebook_username: danieliu
 
 
+# Serving
+port: 4000
+host: 0.0.0.0
+
 # Build settings
 markdown: kramdown

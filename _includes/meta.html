@@ -1,4 +1,9 @@
-<meta name="theme-color" content="#80cbc4">
+{% if page.theme_color %}
+	<meta name="theme-color" content="{{ page.theme_color }}">
+{% else %}
+	<meta name="theme-color" content="#80cbc4">
+{% endif %}
+
 <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@djsnoops">
