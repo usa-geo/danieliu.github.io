@@ -22,12 +22,12 @@ time {
     @include justify-content(center);
 
     & > div {
-        margin: 0 10px;
+        margin: 0 7px;
         line-height: 1.2;
     }
 
     .count {
-        font-size: 3.7rem;
+        font-size: 3.3rem;
     }
 
     .seconds-count {

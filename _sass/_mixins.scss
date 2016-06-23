@@ -40,22 +40,26 @@
 }
 
 @mixin flexbox {
+    display: -webkit-box;
     display: -webkit-flex;
     display: flex;
 }
 
 @mixin flex($flex) {
+    -webkit-box-flex: $flex;
     -webkit-flex: $flex;
     flex: $flex;
 }
 
 @mixin align-items($align) {
+    -webkit-box-align: $align;
     -webkit-flex-align: $align;
     -webkit-align-items: $align;
     align-items: $align;
 }
 
 @mixin justify-content($justify) {
+    -webkit-box-pack: $justify;
     -webkit-justify-content: $justify;
     justify-content: $justify;
 }
