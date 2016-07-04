@@ -3,11 +3,6 @@
         date = new Date(countdown.getAttribute('datetime')),
         days, hours, minutes, seconds;
 
-    var labels = document.querySelectorAll('.label'),
-        counters = document.querySelectorAll('.count');
-
-    var units = ['day', 'hour', 'minute', 'second'];
-
     // Calculate number of seconds
     var tdelta = parseInt((date - Date.now()) / 1000);
 
@@ -20,7 +15,11 @@
         return [days, hours, minutes, seconds];
     }
 
-    function updateCounters(counters, labels, units, remaining) {
+    function updateCounters(remaining) {
+        var labels = document.querySelectorAll('.label'),
+            counters = document.querySelectorAll('.count'),
+            units = ['day', 'hour', 'minute', 'second'];
+
         for (var i = 0; i < counters.length; i++) {
             var el = counters[i],
                 count = remaining[i],
@@ -38,7 +37,7 @@
             embed = document.createElement('iframe'),
             w = window.innerWidth,
             attrs = {
-                src: 'https://www.youtube.com/embed/s0SUEMGZU04?autoplay=1&controls=0&showinfo=0&rel=0',
+                src: 'https://www.youtube.com/embed/s0SUEMGZU04?autoplay=1&color=white&showinfo=0&rel=0',
                 frameborder: 0,
                 allowfullscreen: ''
             };
@@ -55,10 +54,10 @@
 
     if (tdelta > 0) {
         // Initialize to show values immediately
-        updateCounters(counters, labels, units, getRemainingTime(tdelta--));
+        updateCounters(getRemainingTime(tdelta--));
 
         var timer = setInterval(function () {
-            updateCounters(counters, labels, units, getRemainingTime(tdelta--));
+            updateCounters(getRemainingTime(tdelta--));
             if (tdelta <= 0) {
                 clearInterval(timer);
                 embedGoodbye();
