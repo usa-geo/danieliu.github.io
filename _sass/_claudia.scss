@@ -4,7 +4,6 @@
     @include flex(1);
     @include align-items(center);
     @include justify-content(center);
-    flex-direction: column;
 }
 
 .countdown {
@@ -13,6 +12,7 @@
     @include align-items(center);
     @include justify-content(center);
     font-size: 2.5rem;
+    flex-direction: column;
 }
 
 .end-date {
@@ -54,5 +54,22 @@
         .label {
             font-size: 1.4rem;
         }
+    }
+}
+
+.vid-container {
+    @include flexbox;
+    margin-bottom: 30px;
+}
+
+.message {
+    font-size: 1rem;
+    font-weight: 300;
+    margin-top: 5px;
+    color: $brand-color;
+
+    @include media-query($medium-and-up) {
+        margin-top: 15px;
+        font-size: 1.3rem;
     }
 }
