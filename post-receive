@@ -1,0 +1,16 @@
+#!/bin/sh
+
+PATH="$HOME/.rbenv/bin:$PATH"
+PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+eval "$(rbenv init -)"
+
+GIT_REPO=$HOME/danielliu
+TEMP_GIT_CLONE=/tmp/danielliu
+GEMFILE=$TEMP_GIT_CLONE/Gemfile
+PUBLIC_WWW=/var/www/danielliu
+
+git clone $GIT_REPO $TEMP_GIT_CLONE
+BUNDLE_GEMFILE=$GEMFILE bundle install
+BUNDLE_GEMFILE=$GEMFILE bundle exec jekyll build -s $TEMP_GIT_CLONE -d $PUBLIC_WWW
+rm -rf $TEMP_GIT_CLONE
+exit
